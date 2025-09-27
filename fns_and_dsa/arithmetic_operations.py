@@ -1,26 +1,17 @@
-# fns_and_dsa/arithmetic_operations.py
+# arithmetic_operations.py
 
-def perform_operation(num1: float, num2: float, operation: str):
-    """
-    Perform basic arithmetic operations.
-
-    Parameters:
-        num1 (float): First number
-        num2 (float): Second number
-        operation (str): Operation to perform ('add', 'subtract', 'multiply', 'divide')
-
-    Returns:
-        float | str: Result of the operation or an error message
-    """
-    if operation == "add":
-        return num1 + num2
-    elif operation == "subtract":
-        return num1 - num2
-    elif operation == "multiply":
-        return num1 * num2
-    elif operation == "divide":
-        if num2 == 0:
-            return "Error: Division by zero"
-        return num1 / num2
-    else:
-        return "Error: Invalid operation"
+def perform_operation(num1, num2, operation):
+    """Perform basic arithmetic operations: add, subtract, multiply, divide."""
+    match operation:
+        case "add":
+            return num1 + num2
+        case "subtract":
+            return num1 - num2
+        case "multiply":
+            return num1 * num2
+        case "divide":
+            if num2 == 0:
+                return "Cannot divide by zero."
+            return num1 / num2
+        case _:
+            return "Invalid operation. Choose add, subtract, multiply, or divide."
